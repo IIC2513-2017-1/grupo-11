@@ -1,0 +1,8 @@
+Started GET "/" for 127.0.0.1 at 2017-04-27 12:39:34 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/mariajose/.rvm/gems/ruby-2.2.4/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mariajose/.rvm/gems/ruby-2.2.4/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (6.3ms)
+Completed 200 OK in 29ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
