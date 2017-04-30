@@ -1,0 +1,59 @@
+<%= form_for(proyect) do |f| %>
+  <% if proyect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(proyect.errors.count, "error") %> prohibited this proyect from being saved:</h2>
+
+      <ul>
+      <% proyect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field(:initial_date, value: Date.today) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :due_date %>
+    <%= f.date_select :due_date, required: true%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field(:actual_money, value:0) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goal_money %>
+    <%= f.number_field :goal_money, required: true%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field(:score, value:0)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { required: true } %>
+  </div>
+
+  <div class="field">
+    <%= "Founder:\n"%><br>
+    <%= f.select :user_ids, User.all.collect { |u| [ u.username, u.id ] }, { include_blank: true }, { required: true } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

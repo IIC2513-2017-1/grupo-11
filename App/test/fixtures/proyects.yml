@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  initial_date: 2017-04-30
+  due_date: 2017-04-30
+  actual_money: 1
+  goal_money: 1
+  score: 1
+
+two:
+  name: MyString
+  description: MyText
+  initial_date: 2017-04-30
+  due_date: 2017-04-30
+  actual_money: 1
+  goal_money: 1
+  score: 1

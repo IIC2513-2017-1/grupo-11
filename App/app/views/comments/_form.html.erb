@@ -1,0 +1,36 @@
+<%= form_for(comment) do |f| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comment_text %>
+    <%= f.text_area :comment_text, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field(:comment_date, value: Date.today) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.select :user_id, User.all.collect { |u| [ u.username, u.id ] }, { include_blank: true }, { required: true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :proyect_id %>
+    <%= f.select :proyect_id, Proyect.all.collect { |p| [ p.name, p.id ] }, { include_blank: true }, { required: true } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
