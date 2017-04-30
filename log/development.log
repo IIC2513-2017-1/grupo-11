@@ -116,3 +116,141 @@ Migrating to AddCategoryIdToProyect (20170430174953)
   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7229375787370354800)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-30 18:54:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 3095ms (Views: 3055.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments" for ::1 at 2017-04-30 18:54:58 -0300
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (18.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 121ms (Views: 33.1ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/users" for ::1 at 2017-04-30 18:54:59 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (22.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 95ms (Views: 33.1ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 18:55:02 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (21.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 75ms (Views: 45.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 18:55:10 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2017-04-30 18:55:11 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 49.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/proyects" for ::1 at 2017-04-30 18:55:11 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (21.9ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 88ms (Views: 51.2ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/comments" for ::1 at 2017-04-30 18:55:12 -0300
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 18:55:13 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2017-04-30 18:55:14 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/proyects" for ::1 at 2017-04-30 18:55:14 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (0.5ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 18:58:46 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 190ms (Views: 173.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 19:03:18 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 230ms (Views: 207.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/categories" for ::1 at 2017-04-30 19:03:21 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2017-04-30 19:03:22 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/proyects" for ::1 at 2017-04-30 19:03:23 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (0.4ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/proyects/new" for ::1 at 2017-04-30 19:03:24 -0300
+Processing by ProyectsController#new as HTML
+  Rendering proyects/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered proyects/_form.html.erb (602.8ms)
+  Rendered proyects/new.html.erb within layouts/application (623.5ms)
+Completed 200 OK in 736ms (Views: 651.0ms | ActiveRecord: 10.3ms)
+
+
