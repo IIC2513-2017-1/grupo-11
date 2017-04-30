@@ -1,6 +1,6 @@
 class Proyect < ApplicationRecord
 	has_and_belongs_to_many :users
-	has_many :comments
+	has_many :comments, :dependent => :destroy
 	belongs_to :category
 
 	validates :name, :due_date, :goal_money, presence: true

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	has_and_belongs_to_many :proyects
-	has_many :comments
+	has_many :comments, :dependent => :destroy
 
 	validates :password, presence: true, length: {minimum: 6},
 						confirmation: true, allow_blank: false
