@@ -3,13 +3,13 @@ development:
   encoding: unicode
   database: grupo_development
   pool: 5
-  username: pguser
-  password: pguser
+  username: mariajose
+  password: majose
 
 test:
   adapter: postgresql
   encoding: unicode
   database: grupo_test
   pool: 5
-  username: pguser
-  password: pguser
+  username: mariajose
+  password: majose
