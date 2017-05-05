@@ -1,0 +1,20 @@
+<h1> Welcome visitor! </h1>
+<h2> Log in with your information</h2>
+<div id="login-form">
+  <%= form_for :session, url: {action: "create"} do |t| %>
+    <div class="field">
+      <%= t.label :username %>
+      <%= t.text_field :username, required: true %>
+    </div>
+    <div class="field">
+      <%= t.label :password %>
+      <%= t.password_field :password, required: true %>
+    </div>
+    <div class="actions">
+      <%= t.submit 'Log In' %>
+    </div>
+
+  <% end %>
+</div>
+
+
