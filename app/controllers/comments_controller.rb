@@ -1,5 +1,12 @@
 class CommentsController < ApplicationController
+  include Permission
+
+
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only: [:new, :create, :edit, :update, :destroy]
+  before_action only: [:update, :destroy, :edit] do
+    is_mine?(@comment)
+  end
 
   # GET /comments
   # GET /comments.json

@@ -1,5 +1,9 @@
 class ProyectsController < ApplicationController
+  include Permission
+
+
   before_action :set_proyect, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /proyects
   # GET /proyects.json

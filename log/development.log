@@ -1046,3 +1046,338 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 2184ms (Views: 2005.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-05-06 13:57:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (32.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 6867ms (Views: 6594.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 13:58:05 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1808ms (Views: 1665.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at 2017-05-06 13:58:14 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (35.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (137.5ms)
+Completed 200 OK in 2072ms (Views: 1556.4ms | ActiveRecord: 126.7ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 13:58:22 -0300
+Processing by SessionController#new as HTML
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 13:58:22 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (496.5ms)
+  Rendered session/new.html.erb within layouts/application (667.3ms)
+Completed 200 OK in 3671ms (Views: 3371.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3521ms (Views: 3315.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-05-06 13:58:35 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tG3LX/ARoB80ONCPpWJn4YfeQgbum54i0H6mtbR8Gi1Dk+82uy6vvwHRcRW75zo2dbTcYuu+k/Flta7FkW6G1g==", "session"=>{"username"=>"noks", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "noks"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 503ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 13:58:36 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2145ms (ActiveRecord: 5.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"session"} missing required keys: [:id]):
+    13:       <div id="user-bar">
+    14:         <% if current_user %>
+    15:             <div class="name">Welcome, <%= current_user.username %></div>
+    16:             <%= link_to 'Logout', session_path, method: :delete %>
+    17:         <% else %>
+    18:             <%= link_to 'Login', new_session_path %>
+    19:         <% end %>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___3812307316388560275_69943854584280'
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.4ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.8ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.3ms)
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:02:57 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2189ms (Views: 2016.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/session/3" for 127.0.0.1 at 2017-05-06 14:03:11 -0300
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fQny2wiTkZnblBWwFebFlYqEDLjPAqQeBq/nlLNXIR7hCC8Wlk+iBU5ZBvPv2YKFjBjSD4DBG4z/Y9KqI8gdhw==", "id"=>"3"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:03:12 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1915ms (Views: 1762.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 14:03:25 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1587ms (Views: 1436.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-05-06 14:03:33 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JUZhu8CdvGPdq8L8cu8lZnMKExdti1xq9IhUHbHVoLFCM1tjwbPffHNVfGmy37djgzxiqMLaxjFTv11zaYNWcg==", "session"=>{"username"=>"noks", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "noks"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 141ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:03:33 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2181ms (Views: 2020.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/session/3" for 127.0.0.1 at 2017-05-06 14:03:39 -0300
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZvzCFet4N5vqBTT7wLXcr4Y9zOLFX4Mtf+M2OB2L9tkgwi6sQLZPvk4q9TyKy3jGIaCAcDNsEtv2O5Joz9RHVg==", "id"=>"3"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:03:39 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2067ms (Views: 1892.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 14:14:05 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1652ms (Views: 1485.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/proyects" for 127.0.0.1 at 2017-05-06 14:14:10 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (68.2ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (112.2ms)
+Completed 200 OK in 2130ms (Views: 1767.2ms | ActiveRecord: 82.7ms)
+
+
+Started GET "/proyects/new" for 127.0.0.1 at 2017-05-06 14:14:14 -0300
+Processing by ProyectsController#new as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:14:14 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1881ms (Views: 1720.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 14:14:20 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (7.8ms)
+Started POST "/session" for 127.0.0.1 at 2017-05-06 14:14:22 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GE2GD3ZGDf4VwGmZVwhl6A2PrinRLT8/JgvW2WpiUa6GEXI1qBspkSfgxqNCTW7ozmpoY9CI21eSdcoVnLbPNw==", "session"=>{"username"=>"noks", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 14:14:22 -0300
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "noks"], ["LIMIT", 1]]
+Processing by SessionController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 567ms (ActiveRecord: 91.0ms)
+
+
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3153ms (Views: 2987.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2239ms (Views: 1962.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-05-06 14:14:34 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5v94g/GUU6pf7k1AP+54N6Iky7uWDxfAWMWk0c3u6XHE8kbIuJiNy7Ui2RDls1L8AYtmtLFrHH41uI+JJfIE1g==", "session"=>{"username"=>"noks", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "noks"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 124ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:14:34 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1871ms (Views: 1712.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/proyects" for 127.0.0.1 at 2017-05-06 14:14:38 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (1.0ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1537ms (Views: 1371.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/proyects/new" for 127.0.0.1 at 2017-05-06 14:14:42 -0300
+Processing by ProyectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering proyects/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered proyects/_form.html.erb (1005.4ms)
+  Rendered proyects/new.html.erb within layouts/application (1207.7ms)
+Completed 200 OK in 3197ms (Views: 3018.8ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/proyects/1" for 127.0.0.1 at 2017-05-06 14:14:54 -0300
+Processing by ProyectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NS9+VnF3jfa8aJIQuy3bRq8oOfWk/TalUm4t5zrPctwXIkAdOHtTl1akBkBhcPGNDIeU+oOZPRs/Ewa/0tOfew==", "id"=>"1"}
+  [1m[36mProyect Load (1.0ms)[0m  [1m[34mSELECT  "proyects".* FROM "proyects" WHERE "proyects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `user_id' for #<Proyect:0x00561aaf32f940>
+Did you mean?  user_ids
+               user_ids=):
+  
+app/controllers/concerns/permission.rb:9:in `is_mine?'
+app/controllers/proyects_controller.rb:8:in `block in <class:ProyectsController>'
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.6ms)
+Started GET "/proyects/1/edit" for 127.0.0.1 at 2017-05-06 14:15:28 -0300
+Processing by ProyectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProyect Load (0.5ms)[0m  [1m[34mSELECT  "proyects".* FROM "proyects" WHERE "proyects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `user_id' for #<Proyect:0x007f3a25d76188>
+Did you mean?  user_ids
+               user_ids=):
+  
+app/controllers/concerns/permission.rb:9:in `is_mine?'
+app/controllers/proyects_controller.rb:8:in `block in <class:ProyectsController>'
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/niv/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+Started GET "/proyects" for 127.0.0.1 at 2017-05-06 14:22:05 -0300
+Processing by ProyectsController#index as HTML
+  Rendering proyects/index.html.erb within layouts/application
+  [1m[36mProyect Load (0.8ms)[0m  [1m[34mSELECT "proyects".* FROM "proyects"[0m
+  Rendered proyects/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1958ms (Views: 1779.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/comments" for 127.0.0.1 at 2017-05-06 14:22:23 -0300
+Processing by CommentsController#index as HTML
+  Rendering comments/index.html.erb within layouts/application
+  [1m[36mComment Load (47.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  Rendered comments/index.html.erb within layouts/application (63.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2001ms (Views: 1668.2ms | ActiveRecord: 54.2ms)
+
+
+Started GET "/comments/19/edit" for 127.0.0.1 at 2017-05-06 14:22:28 -0300
+Processing by CommentsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as #<Proc:0x007f3a24b8df98@/media/sf_shared/grupo-11/app/controllers/comments_controller.rb:7> rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:22:28 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1670ms (Views: 1548.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/session/3" for 127.0.0.1 at 2017-05-06 14:25:16 -0300
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0JY5coS5CsHVjbn7W5njvMwItVFImgSitfHz8XyJmC3ymwc5zbXUoD9BLauBxMl3b6cYXm/+DxzYjNiplJV1ig==", "id"=>"3"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:25:16 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1790ms (Views: 1640.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2017-05-06 14:25:24 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2062ms (Views: 1878.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2017-05-06 14:25:27 -0300
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMqFnez5QsqFYaASCMvAIQLhW363AbNlq7lHWHke4NwyHrstskqvH8DyyrG5KZKxxYKc7OkLtn7o7ua4hxo7/g==", "session"=>{"username"=>"noks", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "noks"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 138ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-06 14:25:27 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (14.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1888ms (Views: 1749.2ms | ActiveRecord: 0.5ms)
+
+
