@@ -14,6 +14,7 @@ class ProyectsController < ApplicationController
   # GET /proyects/1
   # GET /proyects/1.json
   def show
+    @comments = Comment.includes(:user).submitted_to(@proyect)
   end
 
   # GET /proyects/new

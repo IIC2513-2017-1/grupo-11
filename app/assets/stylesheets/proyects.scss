@@ -5,7 +5,7 @@
 body {font-family:Helvetica,Arial,Verdana,sans-serif;}
 
 h2 {
-  font-size: 1.5em;
+  font-size: 140%;
   color:#1D6893;;
 }
 .centered {
@@ -57,11 +57,33 @@ Header styles minus menu
   background: #fff;
   margin-bottom: 2em;
   border: 0.5px solid grey;
+  max-width: 300px;
   border-radius: 10px ;
+}
+
+.card.in-use {
+  max-width: 600px;
+}
+
+.card-content.in-use{
+  background: white;
+  margin-bottom: 2em;
+  border: none;
+  max-width: 400px;
+}
+
+.card.in-use .inner-container .card-content .content {
+  font-size: 100%;
+  padding: 0.4em 0.4em;
+  color: black;
 }
 
 .card .inner-container:hover {
   box-shadow: 4px 4px 9px hsl(0, 0%, 70%);
+}
+
+.card.in-use .inner-container:hover {
+  box-shadow: none;
 }
 
 .card-content {
@@ -69,17 +91,27 @@ Header styles minus menu
 }
 
 
-.card .inner-container .content {
+.card-content .content {
   font-size: 95%;
   padding: 0.4em 0.4em;
   color: black;
 }
 
+
 .card a {
   text-decoration: none;
 }
+
+.comments-stream {
+  margin-bottom: 2em;
+  border: 0.5px solid grey;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
 img {
   width: 100%;
+  max-width: 200px;
   height: auto;
   border-radius:3%;
   overflow:hidden;

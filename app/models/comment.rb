@@ -4,4 +4,8 @@ class Comment < ApplicationRecord
 
 	validates :comment_text, presence: true, allow_blank: false
 
+	scope :submitted_to, (lambda { |proyect|
+		where(proyect: proyect) if proyect
+	})
+
 end

@@ -3,15 +3,15 @@
     <img src="https://content-static.upwork.com/blog/uploads/sites/4/2009/05/project-management.jpg" alt="project_image">
     <div class="card-content">
       <h2><%= link_to project.name, project %></h2>
-      <div class="content">Description: <%= project.description %> </div>
-      <div class="content">Score: <%= project.score %> </div>
-      <div class="content">Collected money: <%= project.actual_money %></div>
-      <div class="content">Goal: <%= project.goal_money %></div>
-      <div class="content">Expiration date: <%= project.due_date %></div>
+      <div class="content"><strong>Description</strong>: <%= project.description %> </div>
+      <div class="content"><strong>Score</strong>: <%= project.score %> </div>
+      <div class="content"><strong>Collected money</strong>: <%= project.actual_money %></div>
+      <div class="content"><strong>Goal</strong>: <%= project.goal_money %></div>
+      <div class="content"><strong>Expiration date</strong>: <%= project.due_date %></div>
       <br/>
       <%= link_to 'Edit', edit_proyect_path(project) %>
       <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }%>
-      
+
     </div>
   </div>
 </article>

@@ -1,39 +1,27 @@
-<p id="notice"><%= notice %></p>
+<br/>
+<div class="centered">
+  <article class="card in-use">
+    <div class="inner-container">
+      <img src="https://content-static.upwork.com/blog/uploads/sites/4/2009/05/project-management.jpg" alt="project_image">
+      <div class="card-content in-use">
+        <h2><%= link_to @proyect.name, @proyect %></h2>
+        <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
+        <div class="content"><strong>Score</strong>: <%= @proyect.score %> </div>
+        <div class="content"><strong>Collected money</strong>: <%= @proyect.actual_money %></div>
+        <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
+        <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
+        <br/>
+        <%= link_to 'Edit', edit_proyect_path(@proyect) %>
+        <%= link_to 'Destroy', @proyect, method: :delete, data: { confirm: 'Are you sure?' }%>
+      </div>
+    </div>
+  </article>
+  <div class="comments-stream">
+    <% if @comments%>
+        <% @comments.each do |comment| %>
+            <%= render 'comments/preview', comment: comment%>
+        <% end %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @proyect.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @proyect.description %>
-</p>
-
-<p>
-  <strong>Initial date:</strong>
-  <%= @proyect.initial_date %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @proyect.due_date %>
-</p>
-
-<p>
-  <strong>Actual money:</strong>
-  <%= @proyect.actual_money %>
-</p>
-
-<p>
-  <strong>Goal money:</strong>
-  <%= @proyect.goal_money %>
-</p>
-
-<p>
-  <strong>Score:</strong>
-  <%= @proyect.score %>
-</p>
-
-<%= link_to 'Edit', edit_proyect_path(@proyect) %> |
-<%= link_to 'Back', proyects_path %>
