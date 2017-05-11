@@ -1,3 +1,114 @@
 // Place all the styles related to the Proyects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {font-family:Helvetica,Arial,Verdana,sans-serif;}
+
+h2 {
+  font-size: 1.5em;
+  color:#1D6893;;
+}
+.centered {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 52em) {
+  .centered {
+    max-width: 52em;
+  }
+}
+
+/*--------------------------------------------------------------
+Header styles minus menu
+--------------------------------------------------------------*/
+
+.masthead {
+  background:#1D6893;
+  box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.site-title {
+  margin: 0 0 1em;
+  padding: 1em 0;
+  font-size: 2em;
+  text-align: center;
+  color:#EAF3F8;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+@media screen and (min-width: 44.44em) {
+  .site-title {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .site-title {
+    font-size: 2.5em;
+  }
+}
+
+
+/* Card Based Layout - Base styles */
+
+.card {
+  background: #fff;
+  margin-bottom: 2em;
+  border: 0.5px solid grey;
+  border-radius: 10px ;
+}
+
+.card .inner-container:hover {
+  box-shadow: 4px 4px 9px hsl(0, 0%, 70%);
+}
+
+.card-content {
+  padding: 1.4em;
+}
+
+
+.card .inner-container .content {
+  font-size: 95%;
+  padding: 0.4em 0.4em;
+  color: black;
+}
+
+.card a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: auto;
+  border-radius:3%;
+  overflow:hidden;
+}
+
+/* Flexbox styles */
+@media screen and (min-width: 40em) {
+  .cards {
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 1em;
+    display: flex;
+    flex: 0 1 calc(50% - 0.5em);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .cards {
+    margin-top: inherit;
+  }
+
+  .card {
+    margin-bottom: 2em;
+    display: flex;
+    flex: 0 1 calc(33% - 0.5em);
+  }
+}

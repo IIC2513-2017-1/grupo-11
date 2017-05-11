@@ -1,39 +1,22 @@
-<p id="notice"><%= notice %></p>
+<br/>
 
-<h1>Proyects</h1>
+<header class="masthead clear">
+  <div class="centered">
+    <div class="site-branding">
+      <h1 class="site-title">Projects</h1>
+    </div>
+  </div>
+</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Initial date</th>
-      <th>Due date</th>
-      <th>Actual money</th>
-      <th>Goal money</th>
-      <th>Score</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @proyects.each do |proyect| %>
-      <tr>
-        <td><%= proyect.name %></td>
-        <td><%= proyect.description %></td>
-        <td><%= proyect.initial_date %></td>
-        <td><%= proyect.due_date %></td>
-        <td><%= proyect.actual_money %></td>
-        <td><%= proyect.goal_money %></td>
-        <td><%= proyect.score %></td>
-        <td><%= link_to 'Show', proyect %></td>
-        <td><%= link_to 'Edit', edit_proyect_path(proyect) %></td>
-        <td><%= link_to 'Destroy', proyect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class="main-area">
+  <div class="centered">
+    <section class="cards">
+      <% @proyects.each do |project| %>
+        <%= render 'preview', project: project%>
+      <% end %>
+    </section>
 <%= link_to 'New Proyect', new_proyect_path %>
+  </div>
+</div>
+

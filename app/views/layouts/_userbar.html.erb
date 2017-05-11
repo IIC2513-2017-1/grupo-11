@@ -1,0 +1,15 @@
+<div id="dolphincontainer">
+  <div id="dolphinnav">
+    <ul>
+      <li><%= link_to raw('<span>Explore</span>'), proyects_path%></li>
+      <% if current_user %>
+          <li><%= link_to raw('<span>My Projects</span>'), proyects_path%></li>
+          <li><%= link_to raw('<span>Logout</span>'), session_path(current_user), method: :delete %></li>
+      <% else %>
+          <li><%= link_to raw('<span>Create Project</span>'), new_proyect_path %></li>
+          <li><%= link_to raw('<span>Login</span>'), new_session_path %></li>
+          <li><%= link_to raw('<span>Register</span>'), new_user_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
