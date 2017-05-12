@@ -4,6 +4,9 @@ class ProyectsController < ApplicationController
 
   before_action :set_proyect, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, only: [:new, :create, :edit, :update, :destroy]
+  before_action only: [:edit, :update, :destroy] do
+    is_founder?(@proyect)
+  end
 
   # GET /proyects
   # GET /proyects.json
@@ -30,6 +33,9 @@ class ProyectsController < ApplicationController
   # POST /proyects.json
   def create
     @proyect = Proyect.new(proyect_params)
+    @proyect.score = 0
+    @proyect.actual_money = 0
+    @proyect.initial_date = Date.today
     @proyect.founder = current_user.username
 
     respond_to do |format|

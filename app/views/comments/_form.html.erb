@@ -17,10 +17,6 @@
   </div>
 
   <div class="field">
-    <%= f.hidden_field(:comment_date, value: Date.today) %>
-  </div>
-
-  <div class="field">
     <%= f.label :proyect_id %>
     <%= f.select :proyect_id, Proyect.all.collect { |p| [ p.name, p.id ] }, { include_blank: true }, { required: true } %>
   </div>

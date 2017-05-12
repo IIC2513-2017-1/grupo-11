@@ -32,6 +32,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.comment_date = Date.today
     @comment.user_id = current_user.id
 
     respond_to do |format|
@@ -77,6 +78,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:comment_text, :comment_date, :used_id, :proyect_id)
+      params.require(:comment).permit(:comment_text, :proyect_id)
     end
 end
