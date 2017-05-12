@@ -30,6 +30,7 @@ class ProyectsController < ApplicationController
   # POST /proyects.json
   def create
     @proyect = Proyect.new(proyect_params)
+    @proyect.founder = current_user.username
 
     respond_to do |format|
       if @proyect.save
@@ -75,6 +76,6 @@ class ProyectsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def proyect_params
       params.require(:proyect).permit(:name, :description, :initial_date, :due_date, :actual_money, :goal_money, :score,
-      :user_ids, :category_id)
+      :user_ids, :category_id, :founder)
     end
 end

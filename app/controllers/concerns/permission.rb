@@ -9,6 +9,10 @@ module Permission
     redirect_to(root_path, notice: 'Not authorized') unless object.user_id == current_user.id
   end
 
+  def is_admin?
+    redirect_to(root_path, notice: 'Must be admin for that') unless current_user.try(:admin?)
+  end
+
   #Need to do is_mine? verification to projects through join table
-  #Need to implement is_admin attribute to let admin_users create categories
+  #Need to implement is_admin attribute to let  admin_users create categories
 end

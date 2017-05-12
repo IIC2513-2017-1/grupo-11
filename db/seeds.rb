@@ -18,7 +18,8 @@ Category.destroy_all
   User.create(
       username: Faker::GameOfThrones.unique.character,
       mail: Faker::Internet.unique.email,
-      password: Faker::Internet.password
+      password: Faker::Internet.password,
+      admin: 0
   )
 end
 
@@ -26,7 +27,8 @@ end
 u = User.create(
     username: 'grupo11',
     mail: 'a@a.com',
-    password: '123456'
+    password: '123456',
+    admin: 1
 )
 
 # Create Categories
@@ -37,7 +39,7 @@ c3 = Category.create(name: 'Sports', description: 'Projects related to sports')
 
 
 # Create Projects
-user_ids = User.pluck(:id)
+usernames = User.pluck(:username)
 30.times do
   Proyect.create(
       name: Faker::GameOfThrones.city,
@@ -47,12 +49,14 @@ user_ids = User.pluck(:id)
       actual_money: Faker::Number.between(0, 100),
       goal_money: Faker::Number.between(100, 300),
       score: Faker::Number.between(1, 100),
+      founder: usernames.sample,
       category_id: Faker::Number.between(0, 3)
   )
 end
 
 # Create comments
 project_ids = Proyect.pluck(:id)
+user_ids = User.pluck(:id)
 50.times do
   Comment.create(
       comment_text: Faker::Lorem.sentence,

@@ -8,6 +8,8 @@
       <div class="content"><strong>Collected money</strong>: <%= project.actual_money %></div>
       <div class="content"><strong>Goal</strong>: <%= project.goal_money %></div>
       <div class="content"><strong>Expiration date</strong>: <%= project.due_date %></div>
+      <div class="content"><strong>Founder</strong>: <%= project.founder %></div>
+
       <br/>
       <%= link_to 'Edit', edit_proyect_path(project) %>
       <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }%>

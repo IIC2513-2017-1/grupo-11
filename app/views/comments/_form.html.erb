@@ -21,11 +21,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.all.collect { |u| [ u.username, u.id ] }, { include_blank: true }, { required: true } %>
-  </div>
-
-  <div class="field">
     <%= f.label :proyect_id %>
     <%= f.select :proyect_id, Proyect.all.collect { |p| [ p.name, p.id ] }, { include_blank: true }, { required: true } %>
   </div>

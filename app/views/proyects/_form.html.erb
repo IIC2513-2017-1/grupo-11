@@ -48,11 +48,6 @@
     <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { required: true } %>
   </div>
 
-  <div class="field">
-    <%= "Founder:\n"%><br>
-    <%= f.select :user_ids, User.all.collect { |u| [ u.username, u.id ] }, { include_blank: true }, { required: true } %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
