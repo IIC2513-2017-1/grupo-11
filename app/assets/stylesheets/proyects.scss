@@ -79,7 +79,9 @@ Header styles minus menu
 }
 
 .card .inner-container:hover {
-  box-shadow: 4px 4px 9px hsl(0, 0%, 70%);
+  box-shadow: 6px 6px 9px hsl(0, 0%, 70%);
+  border-radius: 10px ;
+
 }
 
 .card.in-use .inner-container:hover {

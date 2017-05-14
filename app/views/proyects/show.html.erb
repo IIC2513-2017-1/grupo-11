@@ -2,7 +2,7 @@
 <div class="centered">
   <article class="card in-use">
     <div class="inner-container">
-      <img src="https://content-static.upwork.com/blog/uploads/sites/4/2009/05/project-management.jpg" alt="project_image">
+      <!--<img src="https://content-static.upwork.com/blog/uploads/sites/4/2009/05/project-management.jpg" alt="project_image">-->
       <div class="card-content in-use">
         <h2><%= link_to @proyect.name, @proyect %></h2>
         <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
@@ -14,16 +14,17 @@
         <br/>
         <%= edit_button(@proyect)%>
         <%= destroy_button(@proyect)%>
-        <%= link_to 'Like', proyect_path(@proyect, :proyect => {:score = @proyect.score++ }), :method :put %>
+        <%= link_to 'Like', proyect_path(@proyect, proyect: {score: @proyect.score+1 }), method: :put %>
 
       </div>
     </div>
   </article>
   <div class="comments-stream">
-    <% if @comments%>
-        <% @comments.each do |comment| %>
+    <% if @proyect.comments%>
+        <% @proyect.comments.reverse.each do |comment| %>
             <%= render 'comments/preview', comment: comment%>
         <% end %>
     <% end %>
   </div>
+  <%= render 'comments/form_create_on_project_page', project: @proyect %>
 </div>

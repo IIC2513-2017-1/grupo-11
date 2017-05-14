@@ -1,0 +1,9 @@
+<%= form_for [project, Comment.new], url: proyect_comments_path(project) do |f| %>
+    <div class="field">
+      <%= f.label :comment_text %>
+      <%= f.text_area :comment_text, required: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

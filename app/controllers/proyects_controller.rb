@@ -1,7 +1,6 @@
 class ProyectsController < ApplicationController
   include Permission
 
-
   before_action :set_proyect, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, only: [:new, :create, :edit, :update, :destroy]
   before_action only: [:edit, :update, :destroy] do
@@ -22,7 +21,7 @@ class ProyectsController < ApplicationController
   # GET /proyects/1
   # GET /proyects/1.json
   def show
-    @comments = Comment.includes(:user).submitted_to(@proyect)
+    #@comments = Comment.includes(:user).submitted_to(@proyect)
   end
 
   # GET /proyects/new
@@ -79,14 +78,14 @@ class ProyectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_proyect
-      @proyect = Proyect.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_proyect
+    @proyect = Proyect.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def proyect_params
-      params.require(:proyect).permit(:name, :description, :initial_date, :due_date, :actual_money, :goal_money, :score,
-      :user_ids, :category_id, :founder)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def proyect_params
+    params.require(:proyect).permit(:name, :description, :initial_date, :due_date, :actual_money, :goal_money, :score,
+                                    :user_ids, :category_id, :founder)
+  end
 end

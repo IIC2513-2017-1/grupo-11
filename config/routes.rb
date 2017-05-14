@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :users, :proyects, :comments, :categories
+  resources :users, :categories
   resources :session, only: [:new, :create, :destroy]
+  resources :proyects do
+    resources :comments
+  end
   get 'welcome/index'
   root 'welcome#index'
-  
+
 end

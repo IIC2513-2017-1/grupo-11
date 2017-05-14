@@ -2,7 +2,15 @@
   <div class="comment-box">
     <div class="card-content">
       <div><%= link_to comment.user.username, comment.user%></div>
-      <div><%= comment.comment_text %></div>
+      <table>
+        <tr>
+          <td><%= comment.comment_text %></td>
+          <% if current_user.try(:id) == comment.user_id %>
+              <td><%= link_to 'Edit', edit_proyect_comment_path(@proyect, comment) %></td>
+              <td><%= link_to 'Destroy', [@proyect, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%end%>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
