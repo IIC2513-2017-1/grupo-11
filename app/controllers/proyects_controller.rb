@@ -14,6 +14,11 @@ class ProyectsController < ApplicationController
     @proyects = Proyect.all
   end
 
+  def user_index
+    @proyects = Proyect.includes(:user)
+                       .restricted_for(current_user)
+  end
+
   # GET /proyects/1
   # GET /proyects/1.json
   def show

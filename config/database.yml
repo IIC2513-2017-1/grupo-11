@@ -3,13 +3,13 @@ development:
   encoding: unicode
   database: grupo_development
   pool: 5
-  username: pguser
-  password: pguser
+  username: <%= ENV['RAILS_DB_USER'] %>
+  password: <%= ENV['RAILS_DB_PWD'] %>
 
 test:
   adapter: postgresql
   encoding: unicode
   database: grupo_test
   pool: 5
-  username: pguser
-  password: pguser
+  username: <%= ENV['RAILS_DB_USER'] %>
+  password: <%= ENV['RAILS_DB_PWD'] %>

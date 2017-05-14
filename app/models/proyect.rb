@@ -12,4 +12,8 @@ class Proyect < ApplicationRecord
 	def due_date_cannot_be_in_the_past
 		errors.add(:due_date, "Fecha de expiración debe ser superior a la actual") if due_date < Date.today
 	end
+
+	scope :restricted_for, (lambda { |user|
+		where(founder: user) if user
+  })
 end

@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20170512011150) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "comment_text"
-    t.datetime "comment_date"
+    t.text     "comment_text", null: false
+    t.date     "comment_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 20170512011150) do
   end
 
   create_table "proyects", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",         null: false
     t.text     "description"
-    t.date     "initial_date"
-    t.date     "due_date"
-    t.integer  "actual_money"
-    t.integer  "goal_money"
-    t.integer  "score"
+    t.date     "initial_date", null: false
+    t.date     "due_date",     null: false
+    t.integer  "actual_money", null: false
+    t.integer  "goal_money",   null: false
+    t.integer  "score",        null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "category_id"
@@ -49,18 +49,20 @@ ActiveRecord::Schema.define(version: 20170512011150) do
   end
 
   create_table "proyects_users", id: false, force: :cascade do |t|
-    t.integer "user_id",    null: false
     t.integer "proyect_id", null: false
+    t.integer "user_id",    null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "mail"
+    t.string   "username",                        null: false
+    t.string   "mail",                            null: false
     t.string   "type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
-    t.boolean  "admin"
+    t.boolean  "admin",           default: false
+    t.index ["mail"], name: "index_users_on_mail", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end

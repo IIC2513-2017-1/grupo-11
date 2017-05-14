@@ -12,8 +12,10 @@
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
         <div class="content"><strong>Founder</strong>: <%= @proyect.founder %></div>
         <br/>
-        <%= link_to 'Edit', edit_proyect_path(@proyect) %>
-        <%= link_to 'Destroy', @proyect, method: :delete, data: { confirm: 'Are you sure?' }%>
+        <%= edit_button(@proyect)%>
+        <%= destroy_button(@proyect)%>
+        <%= link_to 'Like', proyect_path(@proyect, :proyect => {:score = @proyect.score++ }), :method :put %>
+
       </div>
     </div>
   </article>
@@ -25,4 +27,3 @@
     <% end %>
   </div>
 </div>
-
