@@ -6,16 +6,15 @@
       <div class="card-content in-use">
         <h2><%= link_to @proyect.name, @proyect %></h2>
         <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
-        <div class="content"><strong>Score</strong>: <%= @proyect.score %> </div>
+        <div class="content"><strong>Score</strong>: <%= @proyect.likes.count %> </div>
         <div class="content"><strong>Collected money</strong>: <%= @proyect.actual_money %></div>
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
         <div class="content"><strong>Founder</strong>: <%= @proyect.founder %></div>
         <br/>
+        <%= like_button(@proyect) %>
         <%= edit_button(@proyect)%>
         <%= destroy_button(@proyect)%>
-        <%= link_to 'Like', proyect_path(@proyect, proyect: {score: @proyect.score+1 }), method: :put %>
-
       </div>
     </div>
   </article>

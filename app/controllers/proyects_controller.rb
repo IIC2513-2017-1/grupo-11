@@ -61,10 +61,17 @@ class ProyectsController < ApplicationController
         format.html { redirect_to @proyect, notice: 'Proyect was successfully updated.' }
         format.json { render :show, status: :ok, location: @proyect }
       else
+        puts @proyect.errors.full_messages
         format.html { render :edit }
         format.json { render json: @proyect.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def update_score
+    puts "like received"
+    @proyect.score += 1
+
   end
 
   # DELETE /proyects/1

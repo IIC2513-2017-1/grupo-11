@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 	has_secure_password
-
-	has_and_belongs_to_many :proyects
+	has_many :likes
+	has_many :proyects, :dependent => :destroy
+	has_many :proyects, as: :liked_proyects, :through => :likes
 	has_many :comments, :dependent => :destroy
 
 	validates :password, presence: true, length: {minimum: 6},

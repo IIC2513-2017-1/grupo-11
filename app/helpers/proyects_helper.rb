@@ -10,4 +10,12 @@ module ProyectsHelper
     link_to 'Destroy', proyect, method: :delete, data: { confirm: 'Are you sure?' }
   end
 
+  def like_button(proyect)
+    if proyect.is_liker(current_user)
+      like = proyect.likes.where(user: current_user).first
+      button_to 'Unlike', {controller: "likes", action: "destroy", like: {proyect_id: proyect.id, user_id: current_user.id}} , method: :delete
+    else
+      button_to 'Like', {controller: "likes", action: "create", like: {proyect_id: proyect.id, user_id: current_user.id}} , method: :post
+    end
+  end
 end

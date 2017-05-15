@@ -6,7 +6,11 @@ body {font-family:Helvetica,Arial,Verdana,sans-serif;}
 
 h2 {
   font-size: 140%;
-  color:#1D6893;;
+  color:#293d3d;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: capitalize;
 }
 .centered {
   margin: 0 auto;
@@ -24,7 +28,7 @@ Header styles minus menu
 --------------------------------------------------------------*/
 
 .masthead {
-  background:#1D6893;
+  background:#a3c2c2;
   box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
 }
 
@@ -32,8 +36,8 @@ Header styles minus menu
   margin: 0 0 1em;
   padding: 1em 0;
   font-size: 2em;
-  text-align: center;
-  color:#EAF3F8;
+  text-align: left;
+  color:#293d3d;
   text-transform:uppercase;
   font-weight:bold;
 }
@@ -59,6 +63,7 @@ Header styles minus menu
   border: 0.5px solid grey;
   max-width: 300px;
   border-radius: 10px ;
+  box-shadow: 6px 6px 9px hsl(0, 0%, 70%);
 }
 
 .card.in-use {
@@ -76,6 +81,7 @@ Header styles minus menu
   font-size: 100%;
   padding: 0.4em 0.4em;
   color: black;
+
 }
 
 .card .inner-container:hover {
@@ -90,15 +96,18 @@ Header styles minus menu
 
 .card-content {
   padding: 1.4em;
+
 }
 
-
-.card-content .content {
+.card-content .content{
   font-size: 95%;
   padding: 0.4em 0.4em;
-  color: black;
-}
+  color: #3d5c5c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 
+}
 
 .card a {
   text-decoration: none;

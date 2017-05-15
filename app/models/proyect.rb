@@ -1,10 +1,11 @@
 class Proyect < ApplicationRecord
-	has_and_belongs_to_many :users
+	# belongs_to :user
+	has_many :likes
 	has_many :comments, :dependent => :destroy
 	belongs_to :category
 
 	validates :name, :due_date, :goal_money, presence: true
-	validates :score, numericality: true
+	validates :score, numericality: {greater_than_or_equal_to: 0}
 	validates :goal_money, :actual_money, numericality: {greater_than_or_equal_to: 0}
 
 	validate :due_date_cannot_be_in_the_past
@@ -16,4 +17,8 @@ class Proyect < ApplicationRecord
 	scope :restricted_for, (lambda { |user|
 		where(founder: user) if user
   })
+
+	def is_liker(user)
+		likes.where(user: user).count > 0
+	end
 end
