@@ -10,12 +10,12 @@ class ProyectsController < ApplicationController
   # GET /proyects
   # GET /proyects.json
   def index
-    @proyects = Proyect.all
-  end
-
-  def user_index
-    @proyects = Proyect.includes(:user)
-                       .restricted_for(current_user)
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @proyects = Proyect.where(founder: user.username)
+    else
+      @proyects = Proyect.all
+    end
   end
 
   # GET /proyects/1

@@ -12,17 +12,13 @@
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
         <div class="content"><strong>Founder</strong>: <%= @proyect.founder %></div>
         <br/>
-        <%= like_button(@proyect) %>
-        <!-- <%= donate_button(@proyect) %> -->
 
+        <div class="user-btns">
+          <%= like_button(@proyect) %>
+          <%= donate_form(@proyect)%>
+        </div>
 
-        <%= form_tag(donations_path, method: "post") do |f| %>
-          <%= number_field :donation, :amount, input_html: { min: '0', step: 'any' }%>
-          <%= hidden_field_tag :proyect_id, @proyect.id%>
-          <%= hidden_field_tag :user_id, current_user.id%>
-          <%= submit_tag "Donar" %>
-        <% end %>
-
+        <br>
         <%= edit_button(@proyect)%>
         <%= destroy_button(@proyect)%>
       </div>

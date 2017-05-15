@@ -16,7 +16,7 @@ class Proyect < ApplicationRecord
 	end
 
 	scope :restricted_for, (lambda { |user|
-		where(founder: user) if user
+		where(founder: user.username) if user
   })
 
 	def is_liker(user)
