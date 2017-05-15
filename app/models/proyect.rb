@@ -1,6 +1,7 @@
 class Proyect < ApplicationRecord
 	# belongs_to :user
 	has_many :likes
+	has_many :donations
 	has_many :comments, :dependent => :destroy
 	belongs_to :category
 
@@ -20,5 +21,9 @@ class Proyect < ApplicationRecord
 
 	def is_liker(user)
 		likes.where(user: user).count > 0
+	end
+
+	def total_amount
+		donations.pluck(:amount).sum
 	end
 end

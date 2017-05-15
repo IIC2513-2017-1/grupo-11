@@ -18,4 +18,8 @@ module ProyectsHelper
       button_to 'Like', {controller: "likes", action: "create", like: {proyect_id: proyect.id, user_id: current_user.id}} , method: :post
     end
   end
+
+  def donate_button(proyect)
+    button_to 'Donate', {controller: "donations", action: "create", donation: {proyect_id: proyect.id, user_id: current_user.id, amount: 10}} , method: :post
+  end
 end

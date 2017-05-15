@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_secure_password
 	has_many :likes
+	has_many :donations
 	has_many :proyects, :dependent => :destroy
 	has_many :proyects, as: :liked_proyects, :through => :likes
 	has_many :comments, :dependent => :destroy
