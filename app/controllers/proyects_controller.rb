@@ -7,6 +7,16 @@ class ProyectsController < ApplicationController
     is_founder?(@proyect)
   end
 
+
+  def search
+    if params[:search].present?
+      @proyects = Proyect.search(params[:search])
+    else
+      @proyects = Proyect.all
+    end
+  end
+
+
   # GET /proyects
   # GET /proyects.json
   def index

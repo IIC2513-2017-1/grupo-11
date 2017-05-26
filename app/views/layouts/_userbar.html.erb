@@ -11,5 +11,11 @@
           <li><%= link_to raw('<span>Register</span>'), new_user_path %></li>
       <% end %>
     </ul>
+    <%= form_tag search_proyects_path, method: :get, id: 'search-container' do%>
+      <p>
+        <%= submit_tag 'Search', id: 'search-button'%>
+        <%= text_field_tag :search, params[:search], id: 'search-text' %>
+      </p>
+    <% end %>
   </div>
 </div>
