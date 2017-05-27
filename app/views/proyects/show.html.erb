@@ -10,7 +10,7 @@
         <div class="content"><strong>Collected money</strong>: <%= @proyect.total_amount %></div>
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
-        <div class="content"><strong>Founder</strong>: <%= link_to @proyect.founder, user_path(@founder.id) %></div>
+        <div class="content"><strong>Founder</strong>: <%=@proyect.founder%></div>
         <br/>
 
         <div class="user-btns">
