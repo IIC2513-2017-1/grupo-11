@@ -1,5 +1,9 @@
 class User < ApplicationRecord
+
 	has_secure_password
+	has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
+	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 	has_many :likes
 	has_many :donations
 	has_many :proyects, :dependent => :destroy

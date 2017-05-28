@@ -1,8 +1,8 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {font-family:Helvetica,Arial,Verdana,sans-serif;}
+
+body {
+  font-family:Helvetica,Arial,Verdana,sans-serif;
+  }
 
 .centered {
   margin: 0 auto;
@@ -20,5 +20,16 @@ body {font-family:Helvetica,Arial,Verdana,sans-serif;}
 
 .card a {
   text-decoration: none;
+}
+
+.new_comment{
+  display: flex;
+  flex-direction: row;
+}
+
+.comments-stream{
+  border-radius: 10px ;
+  box-shadow: 6px 6px 9px hsl(0, 0%, 70%);
+  background-color: #f1e3dd;
 }
 

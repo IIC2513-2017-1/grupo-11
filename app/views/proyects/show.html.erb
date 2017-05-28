@@ -1,24 +1,27 @@
-<br/>
+
+<header class="masthead clear">
+  <div class="centered">
+    <div class="site-branding">
+      <h1 class="site-title"><%=@proyect.name%></h1>
+    </div>
+  </div>
+</header>
+
+
 <div class="centered">
-  <article class="card in-use">
+  <article class="in-use">
     <div class="inner-container">
-      <!--<img src="https://content-static.upwork.com/blog/uploads/sites/4/2009/05/project-management.jpg" alt="project_image">-->
       <div class="card-content in-use">
-        <h2><%= link_to @proyect.name, @proyect %></h2>
         <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
         <div class="content"><strong>Score</strong>: <%= @proyect.likes.count %> </div>
         <div class="content"><strong>Collected money</strong>: <%= @proyect.total_amount %></div>
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
         <div class="content"><strong>Founder</strong>: <%= @proyect.founder %></div>
-        <br/>
-
         <div class="user-btns">
-          <%= like_button(@proyect) %>
-          <%= donate_form(@proyect)%>
+          <div class="proyect-btn"><%= like_button(@proyect) %></div>
+          <div class="proyect-btn"><%= donate_form(@proyect)%></div>
         </div>
-
-        <br>
         <%= edit_button(@proyect)%>
         <%= destroy_button(@proyect)%>
       </div>
@@ -31,5 +34,6 @@
         <% end %>
     <% end %>
   </div>
+
   <%= render 'comments/form_create_on_project_page', project: @proyect %>
 </div>

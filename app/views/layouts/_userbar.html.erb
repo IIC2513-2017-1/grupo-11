@@ -18,4 +18,24 @@
       </p>
     <% end %>
   </div>
+<div class="nav-container">
+  <ul class="nav-bar">
+    <li class="list"><%= link_to raw('<span class="bar-button">Home</span>'), proyects_path%></li>
+    <% if current_user %>
+        <li class="list"><%= link_to raw('<span class="bar-button">My Projects</span>'), user_proyects_url(current_user) %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Create Project</span>'), new_proyect_path %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Logout</span>'), session_path(current_user), method: :delete %></li>
+    <% else %>
+        <li class="list"><%= link_to raw('<span class="bar-button">Login</span>'), new_session_path %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Register</span>'), new_user_path %></li>
+    <% end %>
+  </ul>
+  <%= form_tag search_proyects_path, method: :get, id: 'search-container' do%>
+      <p>
+        <%= submit_tag 'Search', id: 'search-button'%>
+        <%= text_field_tag :search, params[:search], id: 'search-text' %>
+      </p>
+    <% end %>
+  </div>
 </div>
+

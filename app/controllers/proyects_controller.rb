@@ -100,6 +100,7 @@ class ProyectsController < ApplicationController
     @proyect = Proyect.find(params[:id])
   end
 
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def proyect_params
     params.require(:proyect).permit(:name, :description, :initial_date, :due_date, :actual_money, :goal_money, :score,
