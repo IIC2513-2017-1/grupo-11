@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :proyects do
+    collection do
+      get 'search'
+    end
     resources :comments
   end
   get 'welcome/index'
