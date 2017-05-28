@@ -1,75 +1,42 @@
-#dolphincontainer{
-  position:relative;
-  height:56px;
-  color:#E0E0E0;
-  background:#143D55;
-  width:100%;
-  font-family:Helvetica,Arial,Verdana,sans-serif;
+
+.nav-bar {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    background-color: #8d9db6;
+    overflow: hidden;
+    display: inline-flex;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    overflow: scroll;
+    border:  1px solid #bbb;
+}
+.list {
+    display: inline;
+    border-right: 1px solid #bbb;
+}
+.bar-button {
+    display: block;
+    padding: 8px;
+    background-color:#8d9db6;
 }
 
-#dolphinnav{
-  position:relative;
-  height:33px;
-  font-size:12px;
-  text-transform:uppercase;
-  font-weight:bold;
-  background:#fff url(user-menu/dolphin_bg.gif) repeat-x bottom left;
-  padding:0 0 0 20px;
+.list .bar-button {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #484f4f;
+}
+.list .bar-button:hover {
+    background-color: #bccad6;
+    color: white;
+    height: 50px;
 }
 
-#dolphinnav ul{
-  margin:0;
-  padding:0;
-  list-style-type:none;
-  width:auto;
-  float:left;
+.list .bar-button a:active{ // Esto no funciiona
+  background: green;
 }
 
-#dolphinnav ul li{
-  display:block;
-  float:left;
-  margin:0 1px;
-}
-
-#dolphinnav ul li a{
-  display:block;
-  float:left;
-  color:#EAF3F8;
-  text-decoration:none;
-  padding:0 0 0 20px;
-  height:33px;
-}
-
-#dolphinnav ul li a span{
-  padding:12px 20px 0 0;
-  height:21px;
-  float:left;
-}
-
-#dolphinnav ul li a:hover{
-  color:#fff;
-  background:#1D6893 url(user-menu/dolphin_left-ON.gif) no-repeat top left;
-  line-height:275%;
-}
-
-#dolphinnav ul li a:hover span{
-  display:block;
-  padding:0 20px 0 0;
-  width:auto;
-  background:#1D6893 url(user-menu/dolphin_right-ON.gif) no-repeat top right;
-  height:33px;
-}
-
-#dolphinnav ul li a.current,#dolphinnav ul li a.current:hover{
-  color:#fff;
-  background:#1D6893 url(user-menu/dolphin_left-ON.gif) no-repeat top left;
-  line-height:275%;
-}
-
-#dolphinnav ul li a.current span{
-  display:block;
-  padding:0 20px 0 0;
-  width:auto;
-  background:#1D6893 url(user-menu/dolphin_right-ON.gif) no-repeat top right;
-  height:33px;
-}
