@@ -1,16 +1,14 @@
-<div id="dolphincontainer">
-  <div id="dolphinnav">
-    <ul>
-      <li><%= link_to raw('<span>Explore</span>'), proyects_path%></li>
-      <% if current_user %>
-          <li><%= link_to raw('<span>My Projects</span>'), user_proyects_url(current_user) %></li>
-          <li><%= link_to raw('<span>Edit profile</span>'), edit_user_path(current_user)%></li>
-          <li><%= link_to raw('<span>Logout</span>'), session_path(current_user), method: :delete %></li>
-      <% else %>
-          <li><%= link_to raw('<span>Create Project</span>'), new_proyect_path %></li>
-          <li><%= link_to raw('<span>Login</span>'), new_session_path %></li>
-          <li><%= link_to raw('<span>Register</span>'), new_user_path %></li>
-      <% end %>
-    </ul>
-  </div>
+<div class="nav-container">
+  <ul class="nav-bar">
+    <li class="list"><%= link_to raw('<span class="bar-button">Home</span>'), proyects_path%></li>
+    <% if current_user %>
+        <li class="list"><%= link_to raw('<span class="bar-button">My Projects</span>'), user_proyects_url(current_user) %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Create Project</span>'), new_proyect_path %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Logout</span>'), session_path(current_user), method: :delete %></li>
+    <% else %>
+        <li class="list"><%= link_to raw('<span class="bar-button">Login</span>'), new_session_path %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Register</span>'), new_user_path %></li>
+    <% end %>
+  </ul>
 </div>
+

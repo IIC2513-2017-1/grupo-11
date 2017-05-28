@@ -1,12 +1,11 @@
-// Place all the styles related to the Proyects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {font-family:Helvetica,Arial,Verdana,sans-serif;}
+body {
+  font-family:Helvetica,Arial,Verdana,sans-serif;
+}
 
 h2 {
   font-size: 140%;
-  color:#293d3d;
+  color:#484f4f;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -23,21 +22,16 @@ h2 {
   }
 }
 
-/*--------------------------------------------------------------
-Header styles minus menu
---------------------------------------------------------------*/
-
 .masthead {
-  background:#a3c2c2;
+  background:#bccad6;
   box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
 }
 
 .site-title {
-  margin: 0 0 1em;
   padding: 1em 0;
   font-size: 2em;
   text-align: center;
-  color:#293d3d;
+  color:#484f4f;
   text-transform:uppercase;
   font-weight:bold;
 }
@@ -70,14 +64,16 @@ Header styles minus menu
   width: 100%;
 }
 
-.card.in-use {
+.in-use {
   max-width: 600px;
+  // background: #c8c3cc;
 }
 
 .card-content.in-use{
   background: white;
   border: none;
-  // max-width: 400px;
+  width: 100%
+  
 }
 
 .card.in-use .inner-container {
@@ -87,7 +83,7 @@ Header styles minus menu
 .card.in-use .inner-container .card-content .content {
   font-size: 100%;
   margin: 0.4em 0.4em;
-  color: black;
+  color: #484f4f;
 }
 
 .card .inner-container:hover {
@@ -109,7 +105,7 @@ Header styles minus menu
 .card-content .content{
   font-size: 95%;
   padding: 0.4em 0.4em;
-  color: #3d5c5c;
+  color: #484f4f;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -164,7 +160,17 @@ img {
 }
 
 .user-btns{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.proyect-btn{
+  margin: 5% 5% 5% 0%;
+  display: inline-table;
+
+}
+button_to{
+  background-color: #563f46;
+  color: white; 
 }
