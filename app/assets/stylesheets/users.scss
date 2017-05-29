@@ -3,7 +3,6 @@
 .new_user{
     align-content: center;
     text-align: left;
-    padding-left: 40%;
 }
 
 .field{
@@ -14,13 +13,16 @@
     white-space: nowrap;
 }
 
+.field_with_errors{
+    background-color: #f1e3dd;
+}
+
 .cont{
     display: flex;
 }
 
 label{
     margin-top: 10px;
-    margin-right: 50px;
     color:#484f4f;
     font-size: 15px;
 }
@@ -33,6 +35,20 @@ input{
     border-radius: 5px ;
     // background-color: #8d9db6;
     // color: black;
+}
+
+.notice{
+    color: #667292;
+    font-size: 20px;
+    margin: 2%;
+    top: 0%;
+    position: relative;
+}
+
+.user-info{
+    margin: 2%;
+    top: 0%;
+    position: relative;
 }
 
 

@@ -10,8 +10,12 @@
 <div class="main-area">
   <div class="centered">
     <section class="cards">
-      <% @proyects.each do |project| %>
-        <%= render 'preview', project: project%>
+      <% if Proyect.count != 0%>
+        <% @proyects.each do |project| %>
+          <%= render 'preview', project: project%>
+        <% end %>
+      <% else %>
+        <p>No proyects yet</p>
       <% end %>
     </section>
   </div>

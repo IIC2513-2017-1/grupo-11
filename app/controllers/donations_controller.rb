@@ -1,6 +1,7 @@
 class DonationsController < ApplicationController
   def create
-    Donation.create(donation_params)
+    donation = Donation.create(donation_params)
+    UserMailer.donate(donation.proyect.founder, donation.proyect, donation.amount).deliver_now
     redirect_to :back
   end
 

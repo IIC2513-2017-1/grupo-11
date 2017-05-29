@@ -40,7 +40,7 @@ class ProyectsController < ApplicationController
     @proyect.score = 0
     @proyect.actual_money = 0
     @proyect.initial_date = Date.today
-    @proyect.founder = current_user.username
+    @proyect.founder = current_user
 
     respond_to do |format|
       if @proyect.save
