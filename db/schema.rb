@@ -10,23 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170527213505) do
-
+ActiveRecord::Schema.define(version: 20170528234936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",        null: false
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "comment_text", null: false
-    t.date     "comment_date"
+    t.text     "comment_text"
+    t.datetime "comment_date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
@@ -53,13 +51,13 @@ ActiveRecord::Schema.define(version: 20170527213505) do
   end
 
   create_table "proyects", force: :cascade do |t|
-    t.string   "name",         null: false
+    t.string   "name"
     t.text     "description"
-    t.date     "initial_date", null: false
-    t.date     "due_date",     null: false
-    t.integer  "actual_money", null: false
-    t.integer  "goal_money",   null: false
-    t.integer  "score",        null: false
+    t.date     "initial_date"
+    t.date     "due_date"
+    t.integer  "actual_money"
+    t.integer  "goal_money"
+    t.integer  "score"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "category_id"
@@ -68,9 +66,14 @@ ActiveRecord::Schema.define(version: 20170527213505) do
     t.index ["user_id"], name: "index_proyects_on_user_id", using: :btree
   end
 
+  create_table "proyects_users", id: false, force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "proyect_id", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "username",                        null: false
-    t.string   "mail",                            null: false
+    t.string   "username"
+    t.string   "mail"
     t.string   "type"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
@@ -80,7 +83,6 @@ ActiveRecord::Schema.define(version: 20170527213505) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-
   end
 
   add_foreign_key "proyects", "users"
