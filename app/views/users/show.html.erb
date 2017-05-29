@@ -1,14 +1,28 @@
 
-<p class="user-info">
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
 
-<p class="user-info">
-  <strong>Mail:</strong>
-  <%= @user.mail %>
-</p>
+<aside class="profile-card">
 
+  <header>
+    <!-- here’s the avatar -->
+    <%= image_tag @user.avatar.url %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+    <!-- the username -->
+    <h2><%= @user.username%></h2>
+
+    <!-- the mail -->
+    <h2><%= @user.mail %></h2>
+
+  </header>
+
+  <div class="profile-bio">
+
+    <p>Hello there!</p>
+    <%= link_to 'Check my projects!', user_proyects_path(@user)%>
+
+  </div>
+
+</aside>
+<% if current_user.try(:id) == @user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+<%end%>
 <%= link_to 'Back', users_path %>

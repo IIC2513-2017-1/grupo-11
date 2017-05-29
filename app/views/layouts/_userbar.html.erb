@@ -1,4 +1,3 @@
-
 <div class="nav-container">
   <ul class="nav-bar">
     <li class="list"><%= link_to raw('<span class="bar-button">Home</span>'), proyects_path%></li>
@@ -11,5 +10,12 @@
         <li class="list"><%= link_to raw('<span class="bar-button">Register</span>'), new_user_path %></li>
     <% end %>
   </ul>
+  <%= form_tag search_proyects_path, method: :get, id: 'search-container' do%>
+    <p>
+      <%= submit_tag 'Search', id: 'search-button'%>
+      <%= text_field_tag :search, params[:search], id: 'search-text' %>
+    </p>
+  <% end %>
 </div>
+
 

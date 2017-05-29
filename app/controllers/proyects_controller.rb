@@ -7,6 +7,16 @@ class ProyectsController < ApplicationController
     is_founder?(@proyect)
   end
 
+
+  def search
+    if params[:search].present?
+      @proyects = Proyect.search(params[:search])
+    else
+      @proyects = Proyect.all
+    end
+  end
+
+
   # GET /proyects
   # GET /proyects.json
   def index
@@ -89,6 +99,7 @@ class ProyectsController < ApplicationController
   def set_proyect
     @proyect = Proyect.find(params[:id])
   end
+
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def proyect_params
