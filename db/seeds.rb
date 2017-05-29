@@ -9,8 +9,8 @@
 require 'faker'
 
 # Clean
-User.destroy_all
 Proyect.destroy_all
+User.destroy_all
 Comment.destroy_all
 Category.destroy_all
 
@@ -39,9 +39,8 @@ c1 = Category.create(name: 'Business', description: 'Projects related to busines
 c2 = Category.create(name: 'Educational', description: 'Projects made for educational purposes')
 c3 = Category.create(name: 'Sports', description: 'Projects related to sports')
 
-
+user_ids = User.pluck(:id)
 # Create Projects
-usernames = User.pluck(:username)
 30.times do
   Proyect.create(
       name: Faker::GameOfThrones.city,
@@ -51,14 +50,13 @@ usernames = User.pluck(:username)
       actual_money: Faker::Number.between(0, 100),
       goal_money: Faker::Number.between(100, 300),
       score: Faker::Number.between(1, 100),
-      founder: usernames.sample,
+      user_id: user_ids.sample,
       category_id: Faker::Number.between(0, 3)
   )
 end
 
 # Create comments
 project_ids = Proyect.pluck(:id)
-user_ids = User.pluck(:id)
 50.times do
   Comment.create(
       comment_text: Faker::Lorem.sentence,

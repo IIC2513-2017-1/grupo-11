@@ -17,7 +17,9 @@
         <div class="content"><strong>Collected money</strong>: <%= @proyect.total_amount %></div>
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
-        <div class="content"><strong>Founder</strong>: <%= @proyect.founder %></div>
+
+        <div class="content"><strong>Founder</strong>: <%= @proyect.founder.username %></div>
+
         <div class="user-btns">
           <div class="proyect-btn"><%= like_button(@proyect) %></div>
           <div class="proyect-btn"><%= donate_form(@proyect)%></div>
@@ -27,13 +29,18 @@
       </div>
     </div>
   </article>
+
   <div class="comments-stream">
-    <% if @proyect.comments%>
-        <% @proyect.comments.reverse.each do |comment| %>
-            <%= render 'comments/preview', comment: comment%>
-        <% end %>
+    <% if @proyect.comments && @proyect.comments.count != 0%>
+      <h4 class="comment-title">Comments:</h4>
+      <% @proyect.comments.reverse.each do |comment| %>
+          <%= render 'comments/preview', comment: comment%>
+      <% end %>
+    <% else %>
+      <h4 class="comment-title">No comments on this proyect</h4>
     <% end %>
   </div>
-
-  <%= render 'comments/form_create_on_project_page', project: @proyect %>
+  <% if current_user%>
+    <%= render 'comments/form_create_on_project_page', project: @proyect %>
+  <% end %>
 </div>

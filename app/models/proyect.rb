@@ -1,12 +1,14 @@
 class Proyect < ApplicationRecord
 
+	belongs_to :category	
+	belongs_to :user
+
 	searchkick settings: {index: {max_result_window: 100000}}
 
-  # belongs_to :user
 	has_many :likes
 	has_many :donations
 	has_many :comments, :dependent => :destroy
-	belongs_to :category
+	alias_attribute :founder, :user
 
 	validates :name, :due_date, :goal_money, presence: true
 	validates :score, numericality: {greater_than_or_equal_to: 0}

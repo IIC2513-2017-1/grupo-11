@@ -49,8 +49,6 @@ h2 {
 }
 
 
-/* Card Based Layout - Base styles */
-
 .card {
   background: #fff;
   margin-bottom: 2em;
@@ -118,7 +116,7 @@ h2 {
 
 .comments-stream {
   margin-bottom: 2em;
-  border: 0.5px solid grey;
+  // border: 0.5px solid grey;
   max-height: 150px;
   overflow-y: scroll;
 }
@@ -131,7 +129,6 @@ img {
   overflow:hidden;
 }
 
-/* Flexbox styles */
 @media screen and (min-width: 40em) {
   .cards {
     margin-top: -1em;
@@ -168,9 +165,8 @@ img {
 .proyect-btn{
   margin: 5% 5% 5% 0%;
   display: inline-table;
-
 }
-button_to{
-  background-color: #563f46;
-  color: white; 
+
+.comment-title{
+  margin-left: 2%;
 }
