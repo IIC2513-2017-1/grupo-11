@@ -22,7 +22,7 @@ class ProyectsController < ApplicationController
   def index
     if params[:user_id]
       user = User.find(params[:user_id])
-      @proyects = Proyect.where(founder: user.username)
+      @proyects = Proyect.where(founder: user)
     else
       @proyects = Proyect.all
     end
