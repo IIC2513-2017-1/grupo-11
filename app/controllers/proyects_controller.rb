@@ -10,7 +10,7 @@ class ProyectsController < ApplicationController
 
   def search
     if params[:search].present?
-      @proyects = Proyect.search(params[:search])
+      @proyects = Proyect.where(name: params[:search])
     else
       @proyects = Proyect.all
     end

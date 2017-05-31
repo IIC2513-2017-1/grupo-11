@@ -3,8 +3,6 @@ class Proyect < ApplicationRecord
 	belongs_to :category	
 	belongs_to :user
 
-	searchkick settings: {index: {max_result_window: 100000}}
-
 	has_many :likes
 	has_many :donations
 	has_many :comments, :dependent => :destroy
