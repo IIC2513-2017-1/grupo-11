@@ -1,4 +1,4 @@
-<%= form_for [project, Comment.new], url: proyect_comments_path(project) do |f| %>
+<%= form_for [project, project.comments.build], url: proyect_comments_path(project) do |f| %>
   <div class="cont">
     <div class="field">
       <%= f.label :comment_text %>
