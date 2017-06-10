@@ -1,10 +1,13 @@
 <div class="nav-container">
   <ul class="nav-bar">
-    <li class="list"><%= link_to raw('<span class="bar-button">Home</span>'), proyects_path%></li>
+    <li class="list"><%= link_to raw('<span class="bar-button">Proyects</span>'), proyects_path%></li>
     <% if current_user %>
         <li class="list"><%= link_to raw('<span class="bar-button">My Projects</span>'), user_proyects_url(current_user) %></li>
         <li class="list"><%= link_to raw('<span class="bar-button">Create Project</span>'), new_proyect_path %></li>
-        <li class="list"><%= link_to raw('<span class="bar-button">Edit Profile</span>'), edit_user_path(current_user) %></li>
+        <li class="list"><%= link_to raw('<span class="bar-button">Check Profile</span>'), user_path(current_user) %></li>
+        <% if current_user.try(:admin?) %>
+            <li class="list"><%= link_to raw('<span class="bar-button">Categories</span>'), categories_path%></li>
+        <% end %>
         <li class="list"><%= link_to raw('<span class="bar-button">Logout</span>'), session_path(current_user), method: :delete %></li>
     <% else %>
         <li class="list"><%= link_to raw('<span class="bar-button">Login</span>'), new_session_path %></li>

@@ -30,16 +30,17 @@
     </div>
   </article>
 
+  <h4 class="comment-title">Comments:</h4>
   <div class="comments-stream">
     <% if @proyect.comments && @proyect.comments.count != 0%>
-      <h4 class="comment-title">Comments:</h4>
       <% @proyect.comments.reverse.each do |comment| %>
-          <%= render 'comments/preview', comment: comment%>
+            <%= render 'comments/preview', comment: comment%>
       <% end %>
     <% else %>
       <h4 class="comment-title">No comments on this proyect</h4>
     <% end %>
   </div>
+
   <% if current_user%>
     <%= render 'comments/form_create_on_project_page', project: @proyect %>
   <% end %>

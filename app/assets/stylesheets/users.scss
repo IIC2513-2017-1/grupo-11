@@ -64,6 +64,10 @@ header h2 {
   border-bottom: 1px solid #fff;
 }
 
+header h2.mail {
+  text-transform: lowercase;
+}
+
 aside:hover header h2 {
   margin-top: 0px;
   outline: 0 solid #fff;
