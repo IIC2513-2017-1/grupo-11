@@ -43,7 +43,7 @@ user_ids = User.pluck(:id)
 # Create Projects
 30.times do
   Proyect.create(
-      name: Faker::GameOfThrones.city,
+      name: Faker::GameOfThrones.unique.city,
       description: Faker::Lorem.sentence,
       initial_date: Faker::Date.backward(30),
       due_date: Faker::Date.forward(30),

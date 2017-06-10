@@ -1,12 +1,12 @@
 module ProyectsHelper
 
   def edit_button(proyect)
-    return unless proyect.founder == current_user.try(:username)
+    return unless proyect.founder == current_user.try(:username) || current_user.try(:admin?)
     button_to 'Edit', edit_proyect_path(proyect), method: :get
   end
 
   def destroy_button(proyect)
-    return unless proyect.founder == current_user.try(:username)
+    return unless proyect.founder == current_user.try(:username) || current_user.try(:admin?)
     button_to 'Destroy', proyect, method: :delete, data: { confirm: 'Are you sure?' }
   end
 
