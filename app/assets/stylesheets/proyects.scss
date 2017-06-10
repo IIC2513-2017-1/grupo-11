@@ -170,3 +170,24 @@ img {
 .comment-title{
   margin-left: 2%;
 }
+
+textarea{
+  border-color: #484f4f;
+
+  margin-top: 10px;
+  margin-left: 50px;
+  
+  font-size: 15px;
+  border-radius: 5px ;
+  resize: none;
+  height: 100px;
+}
+
+
+select{
+  color: #484f4f;
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 15px;
+  border-radius: 5px ;
+}

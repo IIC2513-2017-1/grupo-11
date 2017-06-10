@@ -10,30 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true%>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :due_date %>
-    <%= f.date_select :due_date, required: true%>
-  </div>
-
-  <div class="field">
-    <%= f.label :goal_money %>
-    <%= f.number_field :goal_money, required: true%>
-  </div>
-
-  <div class="field">
-    <%= f.label :category_id %>
-    <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { required: true } %>
+  <div class="cont">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.label :description %>
+      <%= f.label :due_date %>
+      <%= f.label :goal_money %>
+      <%= f.label :category_id %>
+    </div>
+    <div class="field">
+      <%= f.text_field :name, required: true%>
+      <%= f.text_area :description %>
+      <%= f.date_select :due_date, required: true%>
+      <%= f.number_field :goal_money, required: true%>
+      <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id ] }, { include_blank: true }, { required: true } %>  
+    </div>
   </div>
 
   <div class="actions">
