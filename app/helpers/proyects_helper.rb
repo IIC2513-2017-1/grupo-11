@@ -14,20 +14,22 @@ module ProyectsHelper
     return unless current_user
     if proyect.is_liker(current_user)
       like = proyect.likes.where(user: current_user).first
-      button_to 'Unlike', {controller: "likes", action: "destroy", like: {proyect_id: proyect.id, user_id: current_user.id}} , method: :delete
+      button_to 'Unlike', {controller: 'likes', action: 'destroy', like: {proyect_id: proyect.id, user_id: current_user.id}},
+                method: :delete, remote: true, class:'likes_button'
     else
-      button_to 'Like', {controller: "likes", action: "create", like: {proyect_id: proyect.id, user_id: current_user.id}} , method: :post 
+      button_to 'Like', {controller: 'likes', action: 'create', like: {proyect_id: proyect.id, user_id: current_user.id}},
+                method: :post, remote: true, class:'likes_button'
     end
   end
 
   def donate_form(proyect)
     return unless current_user
     capture do
-      form_tag(donations_path, method: "post", remote: true) do |f|
+      form_tag(donations_path, method: 'post', remote: true) do |f|
         concat number_field :donation, :amount, input_html: { min: '0', step: 'any' }
         concat hidden_field_tag :proyect_id, @proyect.id
         concat hidden_field_tag :user_id, current_user.id
-        concat submit_tag "Donar"
+        concat submit_tag 'Donar'
       end
     end
   end

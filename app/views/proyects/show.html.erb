@@ -13,7 +13,9 @@
     <div class="inner-container">
       <div class="card-content in-use">
         <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
-        <div class="content"><strong>Score</strong>: <%= @proyect.likes.count %> </div>
+        <div class="content"><strong>Score</strong>:
+          <span id="likes_count"><%= @proyect.likes.count %></span>
+        </div>
         <div class="content"><strong>Collected money</strong>:
           <span id="collected_money"><%= @proyect.total_amount %></span>
         </div>
