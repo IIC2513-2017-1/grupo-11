@@ -21,14 +21,11 @@ pre {
 }
 
 a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
+  background-color: transparent;
+  color:#484f4f;
 
   &:hover {
-    color: #fff;
+    color:#8d9db6;
   }
 }
 
@@ -49,7 +46,7 @@ div {
 }
 
 #notice {
-  color: green;
+  color: #484f4f;
 }
 
 .field_with_errors {

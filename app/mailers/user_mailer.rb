@@ -13,4 +13,10 @@ class UserMailer < ApplicationMailer
     @amount = amount
     mail(to: @user.mail, subject: "Somebody just donated to your proyect!")
   end
+
+  def goal_money_ready(user, proyect)
+    @user = user
+    @proyect = proyect
+    mail(to: @user.mail, subject: "A proyect you donated to has just reached its goal")
+  end
 end

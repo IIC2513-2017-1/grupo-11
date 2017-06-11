@@ -1,3 +1,4 @@
+
 <header class="masthead clear">
   <div class="centered">
     <div class="site-branding">
@@ -6,17 +7,25 @@
   </div>
 </header>
 
-
-<div class="main-area">
-  <div class="centered">
-    <section class="cards">
-      <% if Proyect.count != 0%>
-        <% @proyects.each do |project| %>
-          <%= render 'preview', project: project%>
+<div class="page-container">
+  <div class="category-side-bar">
+    <%= render 'categories/index'%>
+  </div>
+  <div class="main-area">
+    <div class="centered">
+      <section class="cards">
+      <%= will_paginate @proyects %>
+        <% if Proyect.count != 0%>
+          <div class="sort_paginate_ajax">
+            <% @proyects.each do |project| %>
+                <%= render 'preview', project: project%>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No proyects yet</p>
         <% end %>
-      <% else %>
-        <p>No proyects yet</p>
-      <% end %>
-    </section>
+        <%= will_paginate @proyects %>
+      </section>
+    </div>
   </div>
 </div>

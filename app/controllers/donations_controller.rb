@@ -6,13 +6,22 @@ class DonationsController < ApplicationController
 
   def create
     if @proyect.due_date > Date.today
-      @donation = Donation.create(donation_params)
-      UserMailer.donate(@donation.proyect.founder, @donation.proyect, @donation.amount).deliver_now
+      donation = Donation.create(donation_params)
+      if donation.proyect.actual_money >= donation.proyect.goal_money
+        donation.proyect.donations.each do |don|
+          UserMailer.goal_money_ready(don.user, donation.proyect).deliver_now
+        end
+      end
+      if donation.user != donation.proyect.founder
+        UserMailer.donate(donation.proyect.founder, donation.proyect, donation.amount).deliver_now
+      end
       respond_to do |format|
         format.js
       end
       #redirect_to :back
+
     end
+
   end
 
   def destroy

@@ -19,6 +19,7 @@
         <div class="content"><strong>Collected money</strong>:
           <span id="collected_money"><%= @proyect.total_amount %></span>
         </div>
+        
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
 
@@ -34,7 +35,7 @@
     </div>
   </article>
 
-  <h4 class="comment-title">Comments:</h4>
+  <h4 class="comment-title">Comments</h4>
   <div class="comments-stream">
     <% if @proyect.comments && @proyect.comments.count != 0%>
       <% @proyect.comments.reverse.each do |comment| %>
