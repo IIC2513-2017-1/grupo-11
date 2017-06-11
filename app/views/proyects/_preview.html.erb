@@ -4,7 +4,7 @@
       <%= link_to(project) do %>
         <h2><%= project.name%></h2>
         <div class="content"><strong>Description</strong>: <%= project.description %> </div>
-        <div class="content"><strong>Score</strong>: <%= project.likes.count %> </div>
+        <div class="content"><strong>Likes</strong>: <%= project.likes.count %> </div>
         <div class="content"><strong>Collected money</strong>: <%= project.total_amount %></div>
         <div class="content"><strong>Goal</strong>: <%= project.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= project.due_date %></div>
