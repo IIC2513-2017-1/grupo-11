@@ -13,8 +13,13 @@
     <div class="inner-container">
       <div class="card-content in-use">
         <div class="content"><strong>Description</strong>: <%= @proyect.description %> </div>
-        <div class="content"><strong>Likes</strong>: <%= @proyect.likes.count %> </div>
-        <div class="content"><strong>Collected money</strong>: <%= @proyect.total_amount %></div>
+        <div class="content"><strong>Score</strong>:
+          <span id="likes_count"><%= @proyect.likes.count %></span>
+        </div>
+        <div class="content"><strong>Collected money</strong>:
+          <span id="collected_money"><%= @proyect.total_amount %></span>
+        </div>
+        
         <div class="content"><strong>Goal</strong>: <%= @proyect.goal_money %></div>
         <div class="content"><strong>Expiration date</strong>: <%= @proyect.due_date %></div>
 

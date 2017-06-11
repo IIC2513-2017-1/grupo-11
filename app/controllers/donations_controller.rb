@@ -1,5 +1,8 @@
 class DonationsController < ApplicationController
+  include Permission
+
   before_action :set_proyect, only: [:create]
+  before_action :logged_in?
 
   def create
     if @proyect.due_date > Date.today
@@ -12,7 +15,11 @@ class DonationsController < ApplicationController
       if donation.user != donation.proyect.founder
         UserMailer.donate(donation.proyect.founder, donation.proyect, donation.amount).deliver_now
       end
-      redirect_to :back
+      respond_to do |format|
+        format.js
+      end
+      #redirect_to :back
+
     end
 
   end

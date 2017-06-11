@@ -5,15 +5,21 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag('layout.js') %>
   </head>
 
   <body>
     <header>
+
+      <% if current_user %>
+          <%= render 'layouts/profile' %>
+      <% end%>
+
       <nav id="user-bar">
         <%= render 'layouts/userbar'%>
       </nav>
+
     </header>
+
     <main>
       <% [:alert, :notice].each do |flash_type| %>
           <% if (flash_message = flash[flash_type]).present? %>

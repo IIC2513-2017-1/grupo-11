@@ -1,12 +1,18 @@
 class LikesController < ApplicationController
   def create
-    Like.create(like_params)
-    redirect_to :back
+    @like = Like.create(like_params)
+    respond_to do |format|
+      format.js
+    end
+    #redirect_to :back
   end
 
   def destroy
     Like.find_by(like_params).destroy
-    redirect_to :back
+    respond_to do |format|
+      format.js
+    end
+    #redirect_to :back
   end
 
   private

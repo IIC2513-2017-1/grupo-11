@@ -1,0 +1,7 @@
+$(document).bind('ajax:success', function() {
+  var likes = $('#likes_count');
+  var button = $('.likes_button');
+  likes.text(+likes.text()-1);
+  button.prop('value', 'Like');
+
+});

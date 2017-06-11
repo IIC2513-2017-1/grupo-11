@@ -1,0 +1,4 @@
+$(document).bind('ajax:success', function() {
+  var money = $('#collected_money');
+  money.text('<%= @proyect.total_amount %>');
+});
