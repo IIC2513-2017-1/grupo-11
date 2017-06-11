@@ -1,11 +1,17 @@
 class DonationsController < ApplicationController
+  include Permission
+
   before_action :set_proyect, only: [:create]
+  before_action :logged_in?
 
   def create
     if @proyect.due_date > Date.today
-      donation = Donation.create(donation_params)
-      UserMailer.donate(donation.proyect.founder, donation.proyect, donation.amount).deliver_now
-      redirect_to :back
+      @donation = Donation.create(donation_params)
+      UserMailer.donate(@donation.proyect.founder, @donation.proyect, @donation.amount).deliver_now
+      respond_to do |format|
+        format.js
+      end
+      #redirect_to :back
     end
   end
 

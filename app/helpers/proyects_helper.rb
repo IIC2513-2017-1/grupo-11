@@ -23,7 +23,7 @@ module ProyectsHelper
   def donate_form(proyect)
     return unless current_user
     capture do
-      form_tag(donations_path, method: "post") do |f|
+      form_tag(donations_path, method: "post", remote: true) do |f|
         concat number_field :donation, :amount, input_html: { min: '0', step: 'any' }
         concat hidden_field_tag :proyect_id, @proyect.id
         concat hidden_field_tag :user_id, current_user.id

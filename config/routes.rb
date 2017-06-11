@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, :categories, :likes, :donations
+  resources :users, :categories, :likes
   resources :session, only: [:new, :create, :destroy]
+  resources :donations, only: [:create, :destroy]
 
   resources :user do
     resources :proyects
