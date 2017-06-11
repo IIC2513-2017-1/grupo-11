@@ -22,9 +22,12 @@ class ProyectsController < ApplicationController
   def index
     if params[:user_id]
       user = User.find(params[:user_id])
-      @proyects = Proyect.where(founder: user)
+      @proyects = Proyect.where(founder: user).paginate(page: params[:page], per_page: 9)
+    elsif params[:category_id]
+      category = Category.find(params[:category_id])
+      @proyects = Proyect.where(category: category).paginate(page: params[:page], per_page: 9)
     else
-      @proyects = Proyect.all
+      @proyects = Proyect.all.paginate(page: params[:page], per_page: 9)
     end
   end
 
