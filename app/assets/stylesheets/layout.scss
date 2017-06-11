@@ -63,3 +63,119 @@
 button:focus, button:hover {
   outline: none;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #EF5353;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #e11515;
+  outline: none;
+  text-decoration: none;
+}
+
+#offcanvass {
+  position: fixed;
+  z-index: 88;
+  top: 0;
+  right: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateX(320px);
+  -moz-transform: translateX(320px);
+  -ms-transform: translateX(320px);
+  -o-transform: translateX(320px);
+  transform: translateX(320px);
+  bottom: 0;
+  width: 300px;
+  padding: 40px 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+
+#offcanvass ul {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+#offcanvass ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#offcanvass ul li a {
+  display: block;
+  padding: 7px 4px;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 18px;
+  color: #444;
+  outline: none;
+  text-decoration: none;
+}
+#offcanvass ul li a:hover, #offcanvass ul li a:focus, #offcanvass ul li a:active {
+  outline: none;
+  text-decoration: none;
+  color: #EF5353;
+}
+#offcanvass ul li.active a {
+  color: #EF5353 !important;
+}
+#offcanvass.awake {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+#offcanvass .offcanvass-close {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: "Montserrat", arial, sans-serif;
+  z-index: 99;
+  float: left;
+  color: #444;
+}
+
+#offcanvass .offcanvass-close:hover, #offcanvass .offcanvass-close:focus, #offcanvass .offcanvass-close:active {
+  outline: none;
+  text-decoration: none;
+}
+
+.menu-btn {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 16px;
+  font-family: "Montserrat", arial, sans-serif;
+  color: #444;
+}
+
+.menu-btn:hover, .menu-btn:focus, .menu-btn:active {
+  outline: none;
+  text-decoration: none;
+  color: #777777;
+}
+
+#header {
+  float: left;
+  width: 100%;
+  position: relative;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+
+

@@ -1,0 +1,11 @@
+<div id="offcanvass">
+  <a class="offcanvass-close" data-remote="true">User Menu <i class="icon-cross"></i> </a>
+  <ul>
+    <li><%= link_to 'My Proyects', user_proyects_url(current_user)%></li>
+    <li><%= link_to 'Check Profile', user_path(current_user) %></li>
+    <li><%= link_to 'Logout', session_path(current_user), method: :delete %></li>
+  </ul>
+</div>
+<header id="header">
+  <%= link_to 'User Menu', 'javascript:;', class: 'menu-btn js-menu-btn', remote: true%>
+</header>
