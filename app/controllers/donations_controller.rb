@@ -7,9 +7,13 @@ class DonationsController < ApplicationController
   def create
     if @proyect.due_date > Date.today
       donation = Donation.create(donation_params)
-      if donation.proyect.actual_money >= donation.proyect.goal_money
-        donation.proyect.donations.each do |don|
-          UserMailer.goal_money_ready(don.user, donation.proyect).deliver_now
+      if donation.proyect.total_amount >= donation.proyect.goal_money
+        donation.proyect.donators.uniq.each do |donator|
+          if donator != donation.proyect.founder
+            UserMailer.goal_money_ready(donator, donation.proyect).deliver_now
+          elsif
+            UserMailer.goal_money_founder(donator, donation.proyect).deliver_now
+          end
         end
       end
       if donation.user != donation.proyect.founder

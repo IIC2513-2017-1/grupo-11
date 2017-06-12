@@ -6,6 +6,7 @@ class Proyect < ApplicationRecord
 	has_many :likes
 	has_many :donations
 	has_many :comments, :dependent => :destroy
+	has_many :donators, through: :donations, source: :user
 	alias_attribute :founder, :user
 
 	validates :name, :due_date, :goal_money, presence: true

@@ -17,6 +17,12 @@ class UserMailer < ApplicationMailer
   def goal_money_ready(user, proyect)
     @user = user
     @proyect = proyect
-    mail(to: @user.mail, subject: "A proyect you donated to has just reached its goal")
+    mail(to: @user.mail, subject: "A proyect you donated to has just reached its goal money")
+  end
+
+  def goal_money_founder(user, proyect)
+    @user = user
+    @proyect = proyect
+    mail(to: @user.mail, subject: "Your proyect has just reached its goal money")
   end
 end
