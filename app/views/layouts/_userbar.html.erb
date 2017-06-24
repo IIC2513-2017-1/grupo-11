@@ -1,6 +1,6 @@
 <div class="nav-container">
   <ul class="nav-bar">
-    <li class="list"><%= link_to raw('<span class="bar-button">Proyects</span>'), proyects_path%></li>
+    <li class="list"><%= link_to raw('<span class="bar-button">Projects</span>'), proyects_path%></li>
     <% if current_user %>
         <li class="list"><%= link_to raw('<span class="bar-button">Create Project</span>'), new_proyect_path %></li>
         <% if current_user.try(:admin?) %>
