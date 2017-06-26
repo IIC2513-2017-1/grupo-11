@@ -1,0 +1,27 @@
+$(document).on('turbolinks:load', function () {
+  var currency = $('.currency');
+  var selector = $('#currency_op');
+
+  var cmoney = $('#collected_money');
+  var initial_money = cmoney.attr('data-tmoney');
+  var gmoney = $('#goal_money');
+  var goal_money = gmoney.attr('data-gmoney');
+
+  var idollars = Number(initial_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  var gdollars = Number(goal_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+  selector.on('change', function () {
+    var option = selector.val();
+    currency.text(' ' + option);
+    if(option == 'USD'){
+      cmoney.text('$'+idollars);
+      gmoney.text('$'+gdollars)
+    } else {
+      var transformation = $('#'+option).attr('value');
+      var new_actual_amount = (Number(transformation)*Number(initial_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      var new_goal_amount = (Number(transformation)*Number(goal_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      cmoney.text('$'+new_actual_amount);
+      gmoney.text('$'+new_goal_amount);
+    }
+  })
+});
