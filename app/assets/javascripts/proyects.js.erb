@@ -3,23 +3,26 @@ $(document).on('turbolinks:load', function () {
   var selector = $('#currency_op');
 
   var cmoney = $('#collected_money');
-  var initial_money = cmoney.attr('data-tmoney');
   var gmoney = $('#goal_money');
-  var goal_money = gmoney.attr('data-gmoney');
 
-  var idollars = Number(initial_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-  var gdollars = Number(goal_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+  var initial_money, goal_money, idollars, gdollars, transformation, new_actual_amount, new_goal_amount;
 
   selector.on('change', function () {
     var option = selector.val();
     currency.text(' ' + option);
     if(option == 'USD'){
+      initial_money = cmoney.attr('data-tmoney');
+      goal_money = gmoney.attr('data-gmoney');
+      idollars = Number(initial_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      gdollars = Number(goal_money).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
       cmoney.text('$'+idollars);
       gmoney.text('$'+gdollars)
     } else {
-      var transformation = $('#'+option).attr('value');
-      var new_actual_amount = (Number(transformation)*Number(initial_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-      var new_goal_amount = (Number(transformation)*Number(goal_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      initial_money = cmoney.attr('data-tmoney');
+      goal_money = gmoney.attr('data-gmoney');
+      transformation = $('#'+option).attr('value');
+      new_actual_amount = (Number(transformation)*Number(initial_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      new_goal_amount = (Number(transformation)*Number(goal_money)).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
       cmoney.text('$'+new_actual_amount);
       gmoney.text('$'+new_goal_amount);
     }
