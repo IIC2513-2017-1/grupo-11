@@ -1,3 +1,25 @@
+.proyect-avatar {
+  float:right;
+  top: 12px;
+  right: 150px;
+  position: relative;
+  z-index: 2;
+  padding: 5px;
+  border: solid 1px #EFEFEF;
+}
+
+.proyect-avatar:hover {
+  border: solid 1px #CCC;
+  -moz-box-shadow: 1px 1px 5px #999;
+  -webkit-box-shadow: 1px 1px 5px #999;
+  box-shadow: 1px 1px 5px #999;
+}
+
+
+
+// Image
+
+
 
 body {
   font-family:Helvetica,Arial,Verdana,sans-serif;
@@ -194,7 +216,6 @@ select{
 
 .sort_paginate_ajax{
   width: 100%;
-  display: flex;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

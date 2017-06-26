@@ -3,6 +3,10 @@ class Proyect < ApplicationRecord
 	belongs_to :category	
 	belongs_to :user
 
+	has_attached_file :avatar, styles: { medium: '400x400>', thumb: '100x100>' },
+										default_url: 'http://www.freeiconspng.com/uploads/project-icon-30.png'
+	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 	has_many :likes
 	has_many :donations
 	has_many :comments, :dependent => :destroy
