@@ -1,4 +1,5 @@
 $(document).bind('ajax:success', function() {
+<<<<<<< HEAD
 
   var cmoney = $('#collected_money');
   var initial_money = Number(<%= @proyect.total_amount %>);
@@ -16,4 +17,8 @@ $(document).bind('ajax:success', function() {
   var currency = $('.currency');
   currency.text('USD');
 
+=======
+  var money = $('#collected_money');
+  money.text('<%= @proyect.total_amount %>');
+>>>>>>> ee524811429cec66570382b7441ddb2a5f7508a9
 });
