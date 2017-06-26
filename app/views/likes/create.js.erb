@@ -1,7 +1,17 @@
 $(document).bind('ajax:success', function() {
+
+  var flag = $('#flag');
+  if(flag.attr('value') == '1') return;
+
   var likes = $('#likes_count');
   var button = $('.likes_button');
   likes.text(+likes.text()+1);
   button.prop('value', 'Unlike');
+  button.before('<input name="_method" value="delete" type="hidden">');
 
+  var dquery = $('#UnQ');
+  var form = $('.button_to').first();
+  form.attr('action', dquery.attr('value'));
+
+  flag.attr('value', '1');
 });

@@ -2,6 +2,12 @@
     <%= hidden_field_tag curr[0], curr[1] %>
 <% end %>
 
+<%= hidden_field_tag 'UnQ', "/likes/#{@proyect.id}?like%5Bproyect_id%5D=#{@proyect.id}&like%5Buser_id%5D=#{current_user.id}"%>
+<%= hidden_field_tag 'LiQ', "/likes?like%5Bproyect_id%5D=#{@proyect.id}&like%5Buser_id%5D=#{current_user.id}"%>
+
+<%= hidden_field_tag 'flag', '0'%>
+
+
 <header class="masthead clear">
   <div class="centered">
     <div class="site-branding">
