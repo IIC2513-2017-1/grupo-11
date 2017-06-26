@@ -60,17 +60,29 @@ button:focus, button:hover {
   outline: none;
 }
 
-// Menu
+// Top Menu
 
-#search-container #search-button{
-  float: right;
-  color:#1D6893;
+#search-container .search-icon{
+  float:right;
+  top: 12px;
+  right: 15px;
+  position: relative;
+  z-index: 2;
+  color: grey;
 }
+
 
 #search-container #search-text{
   float: right;
-  width: 15%;
+  width: 8%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
+
+#search-container #search-text:focus{
+  width: 20%;
+}
+
 
 // Search Bar
 
@@ -164,6 +176,8 @@ a:hover, a:focus {
 }
 
 .menu-btn {
+  position: fixed;
+  right: 45px;
   font-size: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -182,7 +196,7 @@ a:hover, a:focus {
 #header {
   float: left;
   width: 100%;
-  position: relative;
+  position: fixed;
   padding-top: 4em;
   padding-bottom: 4em;
 }
