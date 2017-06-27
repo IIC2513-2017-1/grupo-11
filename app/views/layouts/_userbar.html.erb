@@ -13,8 +13,8 @@
   </ul>
   <%= form_tag search_proyects_path, method: :get, id: 'search-container' do%>
     <p>
-      <%= submit_tag 'Search', id: 'search-button'%>
-      <%= text_field_tag :search, params[:search], id: 'search-text' %>
+      <span class="search-icon"><i class="fa fa-search"></i></span>
+      <%= text_field_tag :search, params[:search], id: 'search-text', placeholder:'Search...' %>
     </p>
   <% end %>
 </div>
