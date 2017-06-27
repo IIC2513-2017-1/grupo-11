@@ -4,6 +4,7 @@
   top: 0;
   right: 0;
   width: 100%;
+  height: 0%;
 
 }
 
@@ -182,9 +183,10 @@ a:hover, a:focus {
   letter-spacing: 1px;
   text-transform: uppercase;
   float: right;
-  margin-top: 16px;
+  margin-top: 0px;
   font-family: "Montserrat", arial, sans-serif;
   color: #444;
+  z-index: 1;
 }
 
 .menu-btn:hover, .menu-btn:focus, .menu-btn:active {
@@ -199,7 +201,5 @@ a:hover, a:focus {
   position: fixed;
   padding-top: 4em;
   padding-bottom: 4em;
+
 }
-
-
-

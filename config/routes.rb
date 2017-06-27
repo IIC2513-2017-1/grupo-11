@@ -21,4 +21,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
+  namespace :api do
+    namespace :v1 do
+      resources :proyects, only: [:index, :create, :show]
+      resources :users, only: [:show]
+    end
+  end
 end
